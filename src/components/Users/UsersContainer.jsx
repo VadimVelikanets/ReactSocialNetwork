@@ -46,7 +46,7 @@ class UsersAPIComponent extends React.Component {
     }
 }
 
-let mapStateToProps  = (state) =>{
+const mapStateToProps  = (state) =>{
     return{
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
@@ -55,29 +55,6 @@ let mapStateToProps  = (state) =>{
         isFetching: state.usersPage.isFetching
     }
 }
-// let mapDispatchToProps  = (dispatch) =>{
-//     return{
-//             follow: (id) =>{
-//                 dispatch(followAC(id))
-//             },
-//             unfollow: (id) =>{
-//                 dispatch(unfollowAC(id))
-//             },
-//             setUsers: (users) =>{
-//                 dispatch(setUsersAC(users))
-//             },
-//             setCurrentPage: (page) =>{
-//                  dispatch(setCurrentPageAC(page))
-//             },
-//             setTotalUsersCount: (totalCount) =>{
-//                 dispatch(setTotalUsersCountAC(totalCount))
-//            },
-//            toggleIsFetching: (isFetching) =>{
-//             dispatch(setIsFetchingAC(isFetching))
-//            },
-
-//         }
-//     }
 
 const UsersContainer = connect(mapStateToProps, {
     follow: follow,

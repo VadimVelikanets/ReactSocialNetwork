@@ -1,5 +1,5 @@
 import './App.scss';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Footer from './components/Footer/Footer';
 import Sidebar from './components/Sidebar/Sidebar';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -12,7 +12,7 @@ const App = (props) =>{
   return(
     <BrowserRouter>
         <div className="App">
-          <Header/>
+          <HeaderContainer/>
           <div className='wrapper'>
             <div className='container  flex__between'>
               <Sidebar/>
