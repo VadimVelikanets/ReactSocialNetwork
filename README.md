@@ -2,13 +2,13 @@
 
 This project was implemented using technologies React, Redux, Axios, React Router
 
-## `git clone https://github.com/VadimVelikanets/ReactSocialNetwork.git`
+#### `git clone https://github.com/VadimVelikanets/ReactSocialNetwork.git`
 
-## `npm i`
+#### `npm install`
 
-## `cd ReactSocialNetwork`
+#### `cd ReactSocialNetwork`
 
-## `npm start`
+#### `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
