@@ -1,0 +1,53 @@
+.user{
+    padding: 20px;
+    margin-top: 20px;
+    border-bottom: 1px tomato solid;
+
+    .userImg{
+    border-radius: 50%;
+    margin-bottom: 10px;
+    }
+    .userColumn{
+        &:first-child{
+            margin-right: 20px;
+            text-align: center;
+        }
+    }
+    .btnFollow{
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: bisque;
+        border: none;
+        width: 120px;
+    }
+    .btnUnFollow{
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: bisque;
+        border: none;
+        width: 120px;
+        opacity: 0.5;
+    }
+
+}
+.pagination{
+    span{
+        margin: 10px;
+        padding: 10px;  
+        border: 1px black solid;
+        border-radius: 25px;
+        min-width: 50px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .selectedPage{
+        font-weight: bold;
+        color: tomato;
+        border: 1px tomato solid;
+    }
+    
+}

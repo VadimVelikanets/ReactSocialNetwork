@@ -1,0 +1,37 @@
+.user__item{
+    margin-top: 20px;
+    img{
+        margin-right: 15px;
+    }
+}
+.dialogs__list{
+    max-width: 240px;
+    width: 100%;
+    padding-right: 20px;
+    border-right: 2px tomato solid;
+    min-height: calc(100vh - 160px);
+    height: 100%;
+}
+.dialog__window{
+    padding-left: 20px;
+    width: 100%;
+    min-height: calc(100vh - 160px);
+    height: 100%;
+    justify-content: space-between;
+}
+.message__item{
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 10px 0px;
+    background-color: antiquewhite;
+    &.otherMessage{
+        margin-right: 15%;
+        border-radius: 10px 10px 10px 0px;
+        background-color: antiquewhite;
+    }
+    &.yourMessage{
+        margin-left: 15%;
+        border-radius: 10px 10px 0px 10px;
+        background-color: mistyrose;
+    }
+}

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+}
+*, *:before, *:after { box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6, .h2, .h3, .h4 {
+  margin: 0;
+}
+.h2, h2{
+  font-size: 40px;
+  line-height: 51px;
+}
+h3, .h3{
+  font-size: 35px;
+  line-height: 45px;
+}
+h4, .h4{
+  font-size: 30px;
+  line-height: 38.5px;
+}
+.h5{
+  font-size: 20px;
+}
+.small-txt{
+  font-size: 12px;
+}
+a { text-decoration: none; color: #000000;}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.bold{
+  font-weight: 700;
+}
+.blue{
+  color: #264A9C;
+}
+section, .section {
+  position: relative;
+  padding: 60px 0;
+
+}
+button{
+  transition: all .5s ease;
+  cursor: pointer;
+  &:hover{
+    opacity: 0.6;
+  }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: calc(100vh - 520px);
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 20px;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex__start{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.flex__between{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.flex__wrap{
+  flex-wrap: wrap;
+
+}
+.align__center{
+  align-items: center;
+}
+.bg__cover{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.bg__contain{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+h1, .h1{
+  font-size: 50px;
+  line-height: 64px;
+  margin-bottom: 30px
+}
+
+.sidebar, main{
+    min-height: calc(100vh - 120px);
+    height: 100%;
+    padding: 20px;
+}
+.sidebar a{
+  &.active{
+    text-decoration: underline;
+  }
+}
+header, footer{
+    background-color: #000000;
+    padding: 20px 0;
+    *{
+       color: tomato; 
+    }
+    
+}
+
+footer{
+  border-top: 2px tomato solid;
+}
+main{
+  width: 100%;
+  border-left: 2px tomato solid;
+}
+
+.profile-img{
+  border-radius: 50%;
+}
+.post__item{
+  position: relative;
+  margin-top: 20px;
+  .profile-img{
+    margin-right: 20px;
+  }
+  .post__data{
+    font-size: 12px;
+  }
+  .btnLike{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 60px;
+    opacity: 0.5;
+    transition: .3 all ease;
+    &.active{
+      opacity: 1;
+    }
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .btnDeletePost{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5 all ease;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+
+.addPost{
+  textarea{
+    width: 100%;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  button{
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+    color: #ffffff;
+  }
+}
