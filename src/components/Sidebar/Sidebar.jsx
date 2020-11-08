@@ -5,7 +5,7 @@ const Sidebar = () =>{
         <div className='sidebar'>
         <ul>
           <li>
-            <NavLink exact to='/' className='bold'>Messages</NavLink>
+            <NavLink exact to='/messages' className='bold'>Messages</NavLink>
           </li>
           <li>
             <NavLink  to='/profile' className='bold'>Profile</NavLink>

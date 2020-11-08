@@ -1,6 +1,6 @@
 import React from 'react';
 import d from './Dialogs.module.scss';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Redirect} from 'react-router-dom';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
@@ -17,7 +17,7 @@ const Dialogs = (props) =>{
 
         
     }
-  
+    
     let newMessageBody = state.newMessageBody
 
     const MessageList = state.MessageData.map(el =>
@@ -26,6 +26,8 @@ const Dialogs = (props) =>{
     const dialogList = state.dialogData.map(el =>
       <DialogItem name={el.name} key={el.userId} userId={el.userId} userImg={el.userImg} />
     )
+
+    if(props.isAuth === false) return <Redirect to={"/login/"} />
     return(
       <div className='dialogs flex__start'>
           <div className={d.dialogs__list}>

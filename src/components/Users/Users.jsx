@@ -2,6 +2,8 @@ import React from 'react';
 import d from './Users.module.scss';
 import Preloader from '../common/Preloader';
 import {NavLink} from 'react-router-dom';
+import Axios from 'axios';
+import {usersAPI} from '../../api/api'
 const Users = (props) =>{
     let pagesCount = Math.ceil( props.totalUsersCount / props.pageSize);
     let pages = [];
@@ -31,12 +33,22 @@ const Users = (props) =>{
                                 </NavLink>
                             </div>
                             {u.followed 
-                            ? <button onClick={() => {props.unfollow(u.id)}} className={d.btnUnFollow} >UnFollow</button> 
-                            : <button onClick={() => {props.follow(u.id)}}  className={d.btnFollow} >Follow</button> }
+                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.unfollow(u.id)
+                                }}
+                                 className={d.btnUnFollow} >UnFollow</button> 
+
+                            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                
+                                props.follow(u.id)
+                                }}
+                                className={d.btnFollow} >Follow</button> }
         
                         </div>
                         <div className={d.userColumn}>
-                            <span className="bold h5">{u.name}</span>
+                            <NavLink to={'/profile/' + u.id}>
+                                <span className="bold h5">{u.name}</span>
+                            </NavLink>    
                             <div className="small-txt">u.country, u.city</div>
                             <div><i>u.status</i></div>
                         </div>

@@ -5,7 +5,8 @@ const Header = (props) =>{
     return(
         <header>
             <div className='container flex__between'>
-                <a href='/' className={`${h.logo} bold`} >VV Network</a>
+            <NavLink exact to='/profile' className={`${h.logo} bold`}>
+                VV Network </NavLink>
                 <div className={h.login}>
                     {props.isAuth
                     ? <span>{props.login}</span>
