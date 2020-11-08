@@ -128,10 +128,10 @@ export const setUsers = (users) =>{
     }
 }
 
-export const setCurrentPage = (currentPage) =>{
+export const setCurrentPage = (page) =>{
     return {
         type: SET_CURRENT_PAGE,
-        currentPage: currentPage
+        currentPage: page
     }
 }
 

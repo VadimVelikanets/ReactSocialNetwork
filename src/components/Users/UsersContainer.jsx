@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {follow, unfollow, setUsers, setCurrentPage, toggleFollowingProgress, getUsersThunkCreator, authThunk} from '../../redux/users-reducer';
+import {follow, unfollow,  setCurrentPage, toggleFollowingProgress, getUsersThunkCreator} from '../../redux/users-reducer';
 import {connect} from 'react-redux'
 import Axios from 'axios';
 import Users from './Users';
@@ -14,6 +14,7 @@ class UsersAPIComponent extends React.Component {
     //Пишем метод как стрелочную функцию чтобы сохранить контекст
         onPageChanged = (pageNumber) =>{
             this.props.getUsers(pageNumber, this.props.pageSize)
+            this.props.setCurrentPage(pageNumber)
         }
     render(){
 
