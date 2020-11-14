@@ -4,9 +4,9 @@ This project was implemented using technologies React, Redux, Axios, React Route
 
 #### `git clone https://github.com/VadimVelikanets/ReactSocialNetwork.git`
 
-#### `npm install`
-
 #### `cd ReactSocialNetwork`
+
+#### `npm install`
 
 #### `npm start`
 
