@@ -9,10 +9,14 @@ const Header = (props) =>{
                 VV Network </NavLink>
                 <div className={h.login}>
                     {props.isAuth
-                    ? <span>{props.login}</span>
+                    ? <div>
+                        <span>{props.login} </span>
+                        <span className={h.logout} onClick={props.logoutThunk}>LogOut</span> 
+                      </div>
                     : <NavLink to={'/login'}>Login</NavLink>}
                     
                 </div> 
+                
             </div>
         </header>
     )

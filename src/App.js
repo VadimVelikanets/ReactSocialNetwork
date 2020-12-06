@@ -24,8 +24,9 @@ const App = (props) =>{
                 <Route exact path="/users"  render={() =><UsersContainer />}/>
                 <Route  path="/login"  render={() =><Login />}/>
                 <Route exact path='/404'  render={() =><NotFound />} />
-                <Redirect to="/users" />
+                {/* <Redirect to="/users" /> */}
               </main> 
+              
             </div>
           </div>  
           <Footer/>

@@ -24,35 +24,37 @@ const Users = (props) =>{
                 ?  <Preloader/>
                 : null}
                 <div className='userInner'>
-                    {props.users.map(u =>
-                    <div className={`${d.user} flex__start`} key={u.id}>
-                        <div className={d.userColumn}>
-                            <div>
-                                <NavLink to={'/profile/' + u.id}>
-                                    <img className={d.userImg} src={u.photos.small !== null ? u.photos.small : "./img/no-photo.png"} width='100'  alt={u.name}/>
-                                </NavLink>
-                            </div>
-                            {u.followed 
-                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                props.unfollow(u.id)
-                                }}
-                                 className={d.btnUnFollow} >UnFollow</button> 
+                    {props.users.map(u => 
 
-                            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                
-                                props.follow(u.id)
-                                }}
-                                className={d.btnFollow} >Follow</button> }
-        
-                        </div>
-                        <div className={d.userColumn}>
-                            <NavLink to={'/profile/' + u.id}>
-                                <span className="bold h5">{u.name}</span>
-                            </NavLink>    
-                            <div className="small-txt">u.country, u.city</div>
-                            <div><i>u.status</i></div>
-                        </div>
-                    </div>)}
+                        <div className={`${d.user} flex__start`} key={u.id}>
+                            <div className={d.userColumn}>
+                                <div>
+                                    <NavLink to={'/profile/' + u.id}>
+                                        <img className={d.userImg} src={u.photos.small !== null ? u.photos.small : "./img/no-photo.png"} width='100'  alt={u.name}/>
+                                    </NavLink>
+                                </div>
+                                {u.followed 
+                                ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                    props.unfollow(u.id)
+                                    }}
+                                    className={d.btnUnFollow} >UnFollow</button> 
+
+                                : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                    
+                                    props.follow(u.id)
+                                    }}
+                                    className={d.btnFollow} >Follow</button> }
+            
+                            </div>
+                            <div className={d.userColumn}>
+                                <NavLink to={'/profile/' + u.id}>
+                                    <span className="bold h5">{u.name}</span>
+                                </NavLink>    
+                                <div className="small-txt">u.country, u.city</div>
+                                <div><i>u.status</i></div>
+                            </div>
+                        </div>)}
+
                 </div>   
         </div>
     )

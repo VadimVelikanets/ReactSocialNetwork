@@ -35,8 +35,7 @@ let initialState = {
         yourMessage: false
         },
     
-        ],
-    newMessageBody: ''  
+        ]
 }
 const dialogsReducer = (state = initialState, action) => {
     let stateCopy
@@ -56,7 +55,7 @@ const dialogsReducer = (state = initialState, action) => {
                  MessageData: [...state.MessageData]
                 }
             
-            let body = stateCopy.newMessageBody;
+            let body = action.newMessageBody;
             let messagePost = {
                 id: stateCopy.MessageData.length + 1,
                 message: body,
@@ -75,9 +74,10 @@ const dialogsReducer = (state = initialState, action) => {
       }
 }
 
-export const sendMessageCreater = () =>{
+export const sendMessageCreater = (newMessageBody) =>{
     return {
-        type: SEND_MESSAGE
+        type: SEND_MESSAGE,
+        newMessageBody
     }
 }
 

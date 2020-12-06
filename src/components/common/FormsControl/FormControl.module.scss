@@ -1,0 +1,19 @@
+.valid{
+    position: relative;
+    .errorMessage{
+        color: red;
+        position: absolute;
+        
+        font-size: 12px;
+    }
+    textarea + .errorMessage{
+        bottom: 0;
+    }
+    input + .errorMessage{
+        bottom: -22px;
+    }
+}
+
+.error {
+    border: 2px red solid!important;
+}

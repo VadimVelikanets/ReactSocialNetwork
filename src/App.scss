@@ -202,3 +202,25 @@ main{
     color: #ffffff;
   }
 }
+
+@media(max-width: 992px){
+  .wrapper .container{
+    display: block;
+  }
+  .sidebar, main{
+    min-height: inherit;
+    padding: 20px 0;
+  }
+  main{
+    border-left: none;
+  }
+  h2, .h2{
+    font-size: 30px;
+    line-height: 36px;
+  }
+  h4, .h4{
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+

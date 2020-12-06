@@ -3,20 +3,18 @@ import d from './Dialogs.module.scss';
 import {NavLink, Redirect} from 'react-router-dom';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-
+import { Field, reduxForm } from 'redux-form';
+import {requiredField, maxLenghtCreator} from "../../utils/validation/index"
+import {Textarea} from '../../components/common/FormsControl/FormsControl'
 
 const Dialogs = (props) =>{
    
     let state = props.messagesPage
-    let onSendMessageClick = () =>{
-      props.sendMessage()
-    }
-    let onNewMessageChange = (e) =>{
-        let txt = e.target.value
-        props.UpdateNewMessageBody(txt)
 
-        
-    }
+    let addNewMessage = (value) =>{
+     
+      props.sendMessage(value.newMessageBody) 
+  }
     
     let newMessageBody = state.newMessageBody
 
@@ -43,13 +41,19 @@ const Dialogs = (props) =>{
                 <div className="messages">
                   {MessageList}
                 </div>
-                <div className='addPost'>
-                    <textarea onChange={onNewMessageChange} value={newMessageBody}  placeholder="Your Message" ></textarea>
-                    <button onClick={onSendMessageClick}>Submit</button>
-                </div>
+               <AddMessageFormRedux onSubmit={addNewMessage}/>
           </div>
       </div>  
     )
 }
-
+let maxLength100 = maxLenghtCreator(100)
+const AddMessageForm = (props) =>{
+  return(
+    <form className='addPost' onSubmit={props.handleSubmit}>
+                    <Field component={Textarea}  validate={[requiredField, maxLength100]} name={"newMessageBody"}   placeholder="Your Message" ></Field>
+                    <button>Submit</button>
+    </form>
+  )
+}
+const AddMessageFormRedux = reduxForm({form: 'addMessageForm'})(AddMessageForm)
 export default Dialogs;

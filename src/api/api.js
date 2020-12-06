@@ -29,13 +29,34 @@ export const usersAPI = {
             },  
 
     getProfile(userId){
+        // return AxiosInstance.get(`profile/${userId}`)
+        // .then(response =>{
+        //     return response.data
+        //     });
+        console.log('Obsolete method. Use profileAPI')
+        return profileAPI.getProfile(userId)
+    }        
+}
+export const profileAPI = {
+    getProfile(userId){
         return AxiosInstance.get(`profile/${userId}`)
         .then(response =>{
             return response.data
             });
-    }        
+    }, 
+    getStatus(userId){
+        return AxiosInstance.get(`profile/status/${userId}`)
+        .then(response =>{
+            return response.data
+            });
+    },
+    updateStatus(status){
+        return AxiosInstance.put(`profile/status`, {status: status})
+        .then(response =>{
+            return response.data
+            });
+    }      
 }
-
 
 export const authAPI = {
     
@@ -44,5 +65,17 @@ export const authAPI = {
         .then(response =>{
             return response.data
             });
-    }       
+    },   
+    login(email, password, rememberMe ){
+        return AxiosInstance.post(`auth/login`, {email, password, rememberMe })
+        .then(response =>{
+            return response.data
+            });
+    },
+    logout(){
+        return AxiosInstance.delete(`auth/login`)
+        .then(response =>{
+            return response.data
+            });
+    }     
 }

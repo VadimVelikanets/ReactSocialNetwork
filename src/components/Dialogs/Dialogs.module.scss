@@ -35,3 +35,12 @@
         background-color: mistyrose;
     }
 }
+
+@media(max-width: 992px){
+    .dialogs__list{
+        padding-right: 10px;
+    }
+    .dialog__window{
+        padding-left: 10px;
+    }
+}

@@ -29,6 +29,7 @@ export const setUserAuthData = (userId, email, login, isAuth) =>{
         data: {userId, email, login, isAuth}
     }
 }
+//Thunk
 export const authThunk = () =>{
     return (dispatch) =>{
         authAPI.me()
@@ -36,9 +37,32 @@ export const authThunk = () =>{
                 if(data.resultCode === 0){
                     const {id, email, login} = data.data
                     let isAuth = true;
-                    dispatch(setUserAuthData(id, email, login, isAuth))
+                    dispatch(setUserAuthData(id, email, login, true))
                 }
             })
     }
 }
+//Thunk
+export const loginThunk = (email, password, rememberMe) =>{
+    return (dispatch) =>{
+        authAPI.login(email, password, rememberMe)
+        .then(data => {
+                if(data.resultCode === 0){
+                    dispatch(authThunk())
+                }
+            })
+    }
+}
+
+export const logoutThunk = () =>{
+    return (dispatch) =>{
+        authAPI.logout()
+        .then(data => {
+                if(data.resultCode === 0){
+                    dispatch(setUserAuthData(null, null, null, false))
+                }
+            })
+    }
+}
+
 export default authReducer;

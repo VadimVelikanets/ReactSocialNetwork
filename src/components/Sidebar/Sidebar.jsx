@@ -14,12 +14,7 @@ const Sidebar = () =>{
           <li>
             <NavLink to='/users' className='bold'>Users</NavLink>
           </li>
-          {/* <li>
-            <NavLink to='/news' className='bold'>News</NavLink>
-          </li>
-          <li>
-            <NavLink to='/settings' className='bold'>Settings</NavLink>
-          </li> */}
+
         </ul>
       </div> 
     )

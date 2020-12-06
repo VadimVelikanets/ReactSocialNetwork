@@ -4,7 +4,8 @@ import {follow, unfollow,  setCurrentPage, toggleFollowingProgress, getUsersThun
 import {connect} from 'react-redux'
 import Axios from 'axios';
 import Users from './Users';
-import {usersAPI} from '../../api/api'
+import {usersAPI} from '../../api/api';
+import { compose } from 'redux';
 class UsersAPIComponent extends React.Component {
 
     componentDidMount(){
@@ -47,12 +48,23 @@ const mapStateToProps  = (state) =>{
     }
 }
 
-const UsersContainer = connect(mapStateToProps, {
-    follow: follow,
-    unfollow: unfollow,
-    setCurrentPage: setCurrentPage,
-    toggleFollowingProgress: toggleFollowingProgress,
-    getUsers: getUsersThunkCreator
-})(UsersAPIComponent)
+// const UsersContainer = connect(mapStateToProps, {
+//     follow: follow,
+//     unfollow: unfollow,
+//     setCurrentPage: setCurrentPage,
+//     toggleFollowingProgress: toggleFollowingProgress,
+//     getUsers: getUsersThunkCreator
+// })(UsersAPIComponent)
 
-export default UsersContainer;
+// export default UsersContainer;
+
+export default compose(
+    connect(mapStateToProps, {
+        follow: follow,
+        unfollow: unfollow,
+        setCurrentPage: setCurrentPage,
+        toggleFollowingProgress: toggleFollowingProgress,
+        getUsers: getUsersThunkCreator
+    }),
+
+)(UsersAPIComponent)
