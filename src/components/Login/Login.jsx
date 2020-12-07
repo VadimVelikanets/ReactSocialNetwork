@@ -23,9 +23,10 @@ const LoginForm = (props) =>{
                     <span>Remember me</span>
                 </label> 
                 </div>
-                
+                {props.error &&
+                <div className={l.formError}>{props.error}</div>}
                 <button type='submit'>Sign In</button>
-    </form> 
+        </form> 
     )
 
 }
