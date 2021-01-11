@@ -6,7 +6,7 @@ import Axios from 'axios';
 import Users from './Users';
 import {usersAPI} from '../../api/api';
 import { compose } from 'redux';
-import {getUsersSelect, getPageSize, getTotalUsersCount, getcurrentPage, getIsFetching, getfollowingInProgress} from '../../redux/users-selectors';
+import {getUsersSelect, getUsersSelect, getPageSize, getTotalUsersCount, getcurrentPage, getIsFetching, getfollowingInProgress} from '../../redux/users-selectors';
 class UsersAPIComponent extends React.Component {
 
     componentDidMount(){
